@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 """Packages used:
    * BeautifulSoup a library designed for screen-scraping HTML and XML
    	 documentation: http://www.crummy.com/software/BeautifulSoup/
@@ -35,9 +37,13 @@ while url != 'q':
 	data = response.text
 
 	# use BeautifulSoup to locate tag holding genre information
-	tvshow = BeautifulSoup(data)
-	print "Genres: " + ", ".join(tvshow.find('td',{'class':"category"}).get_text().split('\n'))
-	print "\n"
+	# if a URL other than wikipedia is entered, genres will not be returned
+	try:
+		tvshow = BeautifulSoup(data)
+		print "Genres: " + ", ".join(tvshow.find('td',{'class':"category"}).get_text().split('\n'))
+		print "\n"
+	except:
+		print "No genres found"
 
 	# user can enter another wikipedia url
 	url = raw_input("Enter another Wikipedia URL to extract the genres(Enter 'q' to exit):")
