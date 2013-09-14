@@ -1,7 +1,7 @@
-##FEM_Inc Webscrape
+##WebscrapeScript
 
 ### Project
-Create script to url_input and return comma-delimited genre category
+Create script to take url input and return comma-delimited genre listing
 
 1. Takes a title_url (as listed below) as input from Wikipedia. 
 2. Fetches the content of the title.
@@ -10,6 +10,7 @@ Create script to url_input and return comma-delimited genre category
 
 
 Sample test data:
+
 http://en.wikipedia.org/wiki/Pretty_Little_Liars_(TV_series)
 http://en.wikipedia.org/wiki/The_big_bang_theory
 http://en.wikipedia.org/wiki/Good_Wife
